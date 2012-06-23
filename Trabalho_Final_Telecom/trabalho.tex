@@ -1,0 +1,64 @@
+\documentclass[]{report}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mdwlist}
+\usepackage{pslatex}
+\usepackage{makeidx}
+% Title Page
+\title{}
+\author{Renan Birck Pinheiro}
+
+\makeindex
+\begin{document}
+\input{./capa.tex}
+\tableofcontents
+
+\chapter{Introdução}
+Neste trabalho serão abordadas as práticas feitas em laboratório, na discplina de Princípios de Telecomunicações, visando estudar o funcionamento das modulações em amplitude (AM) e em frequência (FM). Também será abordada a modulação por códigos de pulso (PCM). 
+
+\chapter{Experimento 1: Modulação AM a diodo}
+\section{Fundamentação Teórica}
+
+
+Problema proposto:
+\begin{quote}
+Implemente o circuito da Figura 1 e calcule a frequência de ressonância do filtro passa faixa. Ajuste a freqüência de $E_o(t)$ para o valor calculado. Ajuste a freqüência de $a(t)$ para 1KHz. Faça a amplitude de $E_0(t)$ igual a 10V pico a pico e a de $a(t)$ 3V pico a pico. Apresente suas conclusões a respeito do uso do filtro e da freqüência de ressonância obtida.
+\end{quote}
+
+\section{Procedimento experimental}
+O seguinte circuito foi montado em uma \textit{protoboard}:
+
+Para sintonizar a portadora, calcula-se a frequência de ressonância do filtro LC da saída:
+
+\begin{equation}
+f_0 = \frac{1}{2 \pi \sqrt{LC}}
+\end{equation}
+
+Para os valores fornecidos ($C = 2,2 nF$ e $L = 1000 \mu F$) ter-se-á que essa frequência será de cerca de 107 KHz. Neste ponto, o filtro não atenua o sinal, o que se constata através da análise no domínio da frequência.
+
+Sintonizam-se os sinais de portadora e de modulante.
+
+
+
+\chapter{Experimento 2: Modulação AM a transistor}
+\section{Introdução}
+\chapter{Experimento 3: Transmissão e recepção de FM}
+\section{Demodulação FM}
+Ela também pode ser feita utilizando-se um circuito PLL (\textit{Phase-Locked Loop}), o qual foge do foco do presente trabalho.
+\chapter{Experimento 4: Modulação por código de pulso (PCM)}
+\section{Introdução}
+PCM é uma técnica para a representação de sinais analógicos convertidos para formato digital, visando transmissão ou posterior processamento. Uma codificação em PCM transforma uma amostra quantizada em um número codificado. \cite{renatodatacom}
+
+Fundamentalmente, a técnica consiste na quantização dos dados através de um conversor A/D. No lado do receptor existirá um conversor D/A que irá fazer o processo oposto.
+
+\bibliographystyle{alpha}
+\begin{thebibliography}{100}
+\bibitem{renatodatacom}
+ MACHADO, R. 
+ \textbf{Notas de aula da disciplina de Comunicação de Dados.}
+ Disponível em \url{http://www.ufsm.br/gpscom/professores/Renato\%20Machado/comunicacaodedados.html}. Acessado em 12/06/2012.
+\end{thebibliography}
+\end{document}          
