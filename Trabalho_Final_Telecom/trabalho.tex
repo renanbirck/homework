@@ -7,6 +7,8 @@
 \usepackage{mdwlist}
 \usepackage{pslatex}
 \usepackage{makeidx}
+\usepackage{textcomp}
+\usepackage{float}
 % Title Page
 \title{}
 \author{Renan Birck Pinheiro}
@@ -21,7 +23,21 @@ Neste trabalho serão abordadas as práticas feitas em laboratório, na discplin
 
 \chapter{Experimento 1: Modulação AM a diodo}
 \section{Fundamentação Teórica}
+Seja um sinal senoidal modulante dado por 
 
+\begin{equation}\label{eq_modulante}
+V_s = A \cos(\omega_s t + \phi)
+\end{equation}
+
+e uma portadora dada por
+
+\begin{equation}\label{eq_portadora}
+V_p = A \cos(\omega_p t + \phi)
+\end{equation}
+
+tal que $\omega_p > \omega_s$. A fase dos sinais é fixa em 0, assim eliminando-se $\phi$. Para a análise no domínio da frequência, reescrevem-se os cossenos na forma exponencial e usam-se as propriedades de Fourier.
+
+A modulação em amplitude (\textit{Amplitude Modulation}) feita desta forma resulta em duas \textit{sidebands}, posicionadas em $F_s$ \textpm $F_c$.
 
 Problema proposto:
 \begin{quote}
@@ -29,7 +45,15 @@ Implemente o circuito da Figura 1 e calcule a frequência de ressonância do fil
 \end{quote}
 
 \section{Procedimento experimental}
-O seguinte circuito foi montado em uma \textit{protoboard}:
+O circuito da figura \ref{fig:demodulador_AM_diodo} foi montado em uma \textit{protoboard}:
+\begin{figure}[H]
+\centering 
+\begin{center}
+\includegraphics[scale=0.4,clip]{./imagens/AM_Modulator_Diode}
+\end{center}
+\caption{Modulador AM a diodo.}
+\label{fig:demodulador_AM_diodo}
+\end{figure}
 
 Para sintonizar a portadora, calcula-se a frequência de ressonância do filtro LC da saída:
 
@@ -37,11 +61,9 @@ Para sintonizar a portadora, calcula-se a frequência de ressonância do filtro 
 f_0 = \frac{1}{2 \pi \sqrt{LC}}
 \end{equation}
 
-Para os valores fornecidos ($C = 2,2 nF$ e $L = 1000 \mu F$) ter-se-á que essa frequência será de cerca de 107 KHz. Neste ponto, o filtro não atenua o sinal, o que se constata através da análise no domínio da frequência.
+Para os valores fornecidos ($C = 2,2 nF$ e $L = 1000 \mu F$) ter-se-á que essa frequência será de cerca de 107 KHz. 
 
-Sintonizam-se os sinais de portadora e de modulante.
-
-
+Após sintonizados os sinais de portadora e da modulante, mede-se a saída.
 
 \chapter{Experimento 2: Modulação AM a transistor}
 \section{Introdução}
@@ -60,5 +82,8 @@ Fundamentalmente, a técnica consiste na quantização dos dados através de um 
  MACHADO, R. 
  \textbf{Notas de aula da disciplina de Comunicação de Dados.}
  Disponível em \url{http://www.ufsm.br/gpscom/professores/Renato\%20Machado/comunicacaodedados.html}. Acessado em 12/06/2012.
+ 
+\bibitem{wolframeuler}
+ \textbf{Euler Formula}. Disponível em \url{http://mathworld.wolfram.com/EulerFormula.html}. Acessado em 23/06/2012.
 \end{thebibliography}
 \end{document}          
