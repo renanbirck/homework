@@ -16,7 +16,7 @@ function plot_bitstream(bitstream, title)
     % adicionar os valores dos pontos
     
     for i = 1:lenbits
-        text((i * 10) - 9.5,1.18,int2str(bitstream(i)),'FontName','TimesNewRoman')
+        text((i * 10) - 9.5,1.18,int2str(bitstream(i)),'FontName','Droid Sans')
     end
        
         
