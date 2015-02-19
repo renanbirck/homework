@@ -1,5 +1,6 @@
 \documentclass[]{report}
 
+
 \usepackage{caption}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
@@ -17,6 +18,7 @@
 \setlength{\textwidth}{15cm}
 \usepackage{bookmark}
     \newcommand{\capequation}[1]{\begin{center} #1 \end{center}}
+
 
 % Title Page
 \title{}
@@ -91,10 +93,11 @@ onde $\mu_0$ é a permeabilidade magnética do espaço livre = $4 \pi \times 10^
 
 \chapter{Força eletro-motriz e força contra-eletro-motriz (FEM, FCEM)}
 
-Seja um transformador com o secundário em aberto sendo alimentado por uma $v_1$ no primário, como visto na figura \ref{trafo_aberto}:
+Seja um transformador com o secundário em aberto sendo alimentado por uma $v_1$ no primário:
 \begin{center}
-\begin{figure}[htb]
 \label{trafo_aberto}
+\begin{figure}[htb]
+
 \centering
 \includegraphics[scale=0.5]{trafo_2_em_aberto}
 \caption{Transformador em aberto. \cite{fitzgerald}}
@@ -113,6 +116,9 @@ Mas o primário estará sujeito ao fluxo magnético gerado por ele mesmo, e por 
 
 Circuitos magnéticos são dispositivos utilizados para concentrar o efeito magnético de uma corrente em uma região particular do espaço. Fazendo uma analogia com os circuitos elétricos, temos que \cite{wentworth}: \newline
 
+\begin{center}
+\centering
+
 \begin{tabular}{|c|c|c|}
 \hline  & Circuito Elétrico & Circuito Magnético. \\ 
 \hline Uma fonte de ... & FEM (V) & FMM  (ampère-espira) \\ 
@@ -120,10 +126,32 @@ Circuitos magnéticos são dispositivos utilizados para concentrar o efeito magn
 \hline ... que é limitada pela & resistência ($\Omega$) & relutância ($\frac{1}{H}$)\\ 
 \hline 
 \end{tabular} 
+\end{center}
 
-Define-se relutância como a oposição do material à passagem do fluxo, isto é, $\mathcal{R} = \frac{FMM}{\Phi}$. Para um material qualquer, esta também pode ser escrita como
+\begin{center}
+\centering
+\label{asdf}
+\begin{figure}[htb]
+
+\centering
+\includegraphics[scale=0.5]{circ_mag}
+\caption{Circuito magnético simples com um entreferro (\textit{gap}). \cite{fitzgerald}}
+\end{figure}
+\end{center}
+
+e em um circuito magnético o fluxo total é calculável por 
 
 \begin{figure}[!ht]
+\begin{equation}
+\label{def_fluxo}
+\Phi = \frac{\mathcal{F}}{\mathcal{R}_{total}}
+\end{equation}
+\caption*{Equação \ref{def_fluxo}: Relação entre fluxo, FMM (dada por $N i$) e relutância.}
+\end{figure}
+
+Define-se relutância em termos da expressão \ref{def_fluxo}, como a oposição do material à passagem do fluxo, isto é, $\mathcal{R} = \frac{FMM}{\Phi}$. Para um material qualquer, esta também pode ser escrita como
+
+\begin{figure}[H]
 \begin{equation}
 \label{def_relutancia}
 \mathcal{R} = \frac{l_c}{\mu A_c}
@@ -131,7 +159,15 @@ Define-se relutância como a oposição do material à passagem do fluxo, isto �
 \caption*{Equação \ref{def_relutancia}: Definição de relutância para um material de comprimento $l_c$, área $A_c$ e permeabilidade $\mu$.}
 \end{figure}
 
-Em muitas situações práticas a relutância do núcleo é desprezível devido ao seu baixíssimo valor perante a relutância do entreferro.
+Em muitas situações práticas a relutância do núcleo é desprezível devido ao seu baixíssimo valor perante a relutância do entreferro. No caso do circuito da figura anterior, o cálculo do fluxo ficaria
+
+\begin{figure}[H]
+\begin{equation}
+\label{relutancia_simples}
+\Phi = \frac{N i \mu A_g}{g}
+\end{equation}
+\caption*{Equação \ref{relutancia_simples}: Fluxo para o circuito magnético mais simples possível.}
+\end{figure}
 
 \chapter{Indutância Mútua e Auto-Indutância}
 
@@ -166,9 +202,9 @@ L_{xy}  = N_x N_y \frac{\mu_0 A_c}{g}
 \caption*{Equação \ref{ind_mutua_auto}: Expressão da indutância entre duas bobinas. Se $X=Y$, ela se refere à autoindutância}
 \end{figure}
 
-
 \chapter{Conclusão}
-No presente trabalho foi possível verificar alguns dos conceitos do eletromagnetismo necessários para o estudo dos transformadores. 
+No presente trabalho foi possível revisar alguns dos conceitos do eletromagnetismo, como as leis de Faraday, Lenz e Ampère, a indutância mútua e os circuitos magnéticos, necessários para o estudo dos transformadores e verificar como eles se aplicam nestes dispositivos. 
+
 \bibliographystyle{alpha}
 \begin{thebibliography}{100}
 \bibitem{fitzgerald} FITZGERALD, A.E. KINGSLEY, C. Jr. UMANS, S. D. \textbf{Máquinas Elétricas}. 6ª Edição. Porto Alegre: Bookman, 2006.
